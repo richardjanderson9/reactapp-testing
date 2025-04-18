@@ -1,3 +1,7 @@
+:root {
+  --hue-rotation: 360deg;
+}
+
 .App {
   text-align: center;
 }
@@ -5,11 +9,34 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+
+  /* Apply both animations */
+  animation:
+    App-logo-spin infinite 20s cubic-bezier(0.4, 0, 0.2, 1),       /* Existing spin animation */
+    App-color-cycle infinite 5.4s ease-in-out; /* New color cycle animation with 5.4s duration */
+  will-change: transform, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.App-logo:hover {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    /* Apply both animations here as well */
+    animation:
+      App-logo-spin infinite 20s cubic-bezier(0.4, 0, 0.2, 1),
+      App-color-cycle infinite 5.4s ease-in-out; /* Updated duration */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .App-logo {
+    animation: none;
+    transform: none;
   }
 }
 
@@ -28,6 +55,7 @@
   color: #61dafb;
 }
 
+/* Existing spin keyframes */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +63,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Updated keyframes for color cycle with 6 steps */
+@keyframes App-color-cycle {
+  0% { filter: hue-rotate(calc(var(--hue-rotation) * 0)); }
+  16.67% { filter: hue-rotate(calc(var(--hue-rotation) * 0.167)); }
+  33.33% { filter: hue-rotate(calc(var(--hue-rotation) * 0.333)); }
+  50% { filter: hue-rotate(calc(var(--hue-rotation) * 0.5)); }
+  66.67% { filter: hue-rotate(calc(var(--hue-rotation) * 0.667)); }
+  83.33% { filter: hue-rotate(calc(var(--hue-rotation) * 0.833)); }
+  100% { filter: hue-rotate(var(--hue-rotation)); }
 }
