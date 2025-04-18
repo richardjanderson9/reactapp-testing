@@ -1,0 +1,57 @@
+{
+  "name": "reactapp-testing",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^4.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardjanderson9/reactapp-testing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/richardjanderson9/reactapp-testing/issues"
+  },
+  "homepage": "http://localhost:3000",
+  "devDependencies": {
+    "dotenv": "^16.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3",
+    "why-did-you-render": "^1.0.1"
+  },
+  "overrides": {
+    "nth-check": "2.1.1",
+    "postcss": "^8.4.31"
+  }
+}
