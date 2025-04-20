@@ -1,47 +1,38 @@
+/* CSS Variables */
 :root {
   --hue-rotation: 360deg;
+  --header-bg: #282c34;
+  --link-color: #61dafb;
+  --animation-duration: 20s;
+  --color-cycle-duration: 5.4s;
+  --bg-transition-time: 15s;
+  --bg-color-1: #0a0a0a;  /* Darkest black */
+  --bg-color-2: #1a1a1a;  /* Dark grey */
+  --bg-color-3: #262626;  /* Medium dark grey */
+  --bg-color-4: #333333;  /* Grey */
 }
 
+/* App Container */
 .App {
   text-align: center;
+  min-height: 100vh;
+  animation: backgroundChange var(--bg-transition-time) ease-in-out infinite;
 }
 
+/* Logo Styles */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-
-  /* Apply both animations */
-  animation:
-    App-logo-spin infinite 20s cubic-bezier(0.4, 0, 0.2, 1),       /* Existing spin animation */
-    App-color-cycle infinite 5.4s ease-in-out; /* New color cycle animation with 5.4s duration */
+  /* Performance optimizations */
   will-change: transform, filter;
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-.App-logo:hover {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    /* Apply both animations here as well */
-    animation:
-      App-logo-spin infinite 20s cubic-bezier(0.4, 0, 0.2, 1),
-      App-color-cycle infinite 5.4s ease-in-out; /* Updated duration */
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .App-logo {
-    animation: none;
-    transform: none;
-  }
-}
-
+/* Header Styles */
 .App-header {
-  background-color: #282c34;
+  background-color: transparent;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -52,26 +43,62 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--link-color);
 }
 
-/* Existing spin keyframes */
+/* Animation States */
+.App-logo:hover {
+  animation-play-state: paused;
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: 
+      App-logo-spin infinite var(--animation-duration) cubic-bezier(0.4, 0, 0.2, 1),
+      App-color-cycle infinite var(--color-cycle-duration) ease-in-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .App-logo {
+    animation: none;
+    transform: none;
+  }
+  .App {
+    animation: none;
+    background-color: var(--bg-color-1);
+  }
+}
+
+/* Keyframe Animations */
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* Updated keyframes for color cycle with 6 steps */
 @keyframes App-color-cycle {
-  0% { filter: hue-rotate(calc(var(--hue-rotation) * 0)); }
-  16.67% { filter: hue-rotate(calc(var(--hue-rotation) * 0.167)); }
-  33.33% { filter: hue-rotate(calc(var(--hue-rotation) * 0.333)); }
-  50% { filter: hue-rotate(calc(var(--hue-rotation) * 0.5)); }
-  66.67% { filter: hue-rotate(calc(var(--hue-rotation) * 0.667)); }
-  83.33% { filter: hue-rotate(calc(var(--hue-rotation) * 0.833)); }
-  100% { filter: hue-rotate(var(--hue-rotation)); }
+  0% { filter: hue-rotate(0deg); }
+  16.67% { filter: hue-rotate(60deg); }
+  33.33% { filter: hue-rotate(120deg); }
+  50% { filter: hue-rotate(180deg); }
+  66.67% { filter: hue-rotate(240deg); }
+  83.33% { filter: hue-rotate(300deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Background Animation */
+@keyframes backgroundChange {
+  0%, 100% {
+    background-color: var(--bg-color-1);
+  }
+  25% {
+    background-color: var(--bg-color-2);
+  }
+  50% {
+    background-color: var(--bg-color-3);
+  }
+  75% {
+    background-color: var(--bg-color-4);
+  }
 }

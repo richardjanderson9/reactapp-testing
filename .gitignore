@@ -1,27 +1,66 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# Testing
 /coverage
-
-# production
-/build
-
-# sync testing
 /sync-test
 temp.json
+__snapshots__/
+*.snap
 
-# misc
+# Production
+/build
+/dist
+*.tsbuildinfo
+
+# Environment Files
+.env
+.env.*
+!.env.example
+
+# IDE & Editor Files
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
 .DS_Store
+
+# Debug Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+*.log
+
+# Cache & Local Files
+.npm
+.eslintcache
+.stylelintcache
+.cache
+.parcel-cache
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+.DS_Store
+Thumbs.db
+*.pid
+*.pid.lock
+*.seed
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Project Specific
+/temp
+*.bak
