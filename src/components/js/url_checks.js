@@ -11,25 +11,28 @@ const DomainRedirect = () => {
 
     const currentDomain = window.location.hostname;
     let isValidDomain = false;
+    let matchedEnv = null;
 
     // Check if domain matches any environment
     Object.entries(urldata.environments).forEach(([env, data]) => {
       data.domains.forEach(domain => {
-        // For live environment, check for subdomains
         if (env === 'live') {
           const domainRegex = new RegExp(`^(?:[\\w-]+\\.)*${domain.replace('.', '\\.')}$`);
           if (domainRegex.test(currentDomain)) {
             isValidDomain = true;
+            matchedEnv = env;
           }
         } else if (currentDomain === domain) {
           isValidDomain = true;
+          matchedEnv = env;
         }
       });
     });
 
-    // Display appropriate warning based on environment
     if (!isValidDomain) {
       console.warn(`⚠️ Warning: ${currentDomain} is not a recognized domain. Please use a valid testing or live domain.`);
+    } else if (matchedEnv === 'live') {
+      console.info(`🔧 Running in live environment on ${currentDomain}`);
     } else {
       console.info(`🔧 Running in testing environment on ${currentDomain}`);
     }
