@@ -121,3 +121,27 @@
   50% { background: nth(var(--bg-colors), 3); }
   75% { background: nth(var(--bg-colors), 4); }
 }
+
+/* Updated GitHub button styles */
+.github-button {
+  padding: 0.5rem 1rem;
+  background-color: #24292e;
+  color: #fff;
+  border: none;
+  border-radius: 50px;  /* Rounded button */
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  animation: githubHueRotate 5.4s linear infinite;
+}
+
+.github-button:hover {
+  background-color: #444;
+  text-decoration: underline;
+}
+
+/* GitHub button hue rotation animation */
+@keyframes githubHueRotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}

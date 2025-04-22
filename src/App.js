@@ -1,28 +1,18 @@
 // src/App.js
-import React, { memo } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import packageJson from '../package.json';
-
-const AppHeader = memo(({ appName, appVersion }) => (
-  <header className="App-header">
-    <img src={logo} className="App-logo" alt="logo" />
-    <p>
-      Name: {appName}
-      <br />
-      Version: {appVersion}
-    </p>
-  </header>
-));
-
-AppHeader.displayName = 'AppHeader';
+import UserInterface from './components/js/userInterface';
+import FingerprintChecks from './components/js/dataprocessing/fingerprintChecks';
+import CookieReader from './components/js/dataprocessing/cookieReader';
+import BackgroundData from './components/js/dataprocessing/backgroundData';
 
 function App() {
-  const { version: appVersion, name: appName } = packageJson;
-
   return (
     <div className="App">
-      <AppHeader appName={appName} appVersion={appVersion} />
+      <UserInterface />
+      <FingerprintChecks />
+      <CookieReader />
+      <BackgroundData />
     </div>
   );
 }

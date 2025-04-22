@@ -1,0 +1,12 @@
+{
+  "fingerprints": [
+    {
+      "id": "fp1",
+      "data": "Sample data for fingerprint 1"
+    },
+    {
+      "id": "fp2",
+      "data": "Sample data for fingerprint 2"
+    }
+  ]
+}

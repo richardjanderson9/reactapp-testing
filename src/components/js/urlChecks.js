@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import { useEffect, useRef } from 'react';
-import urldata from '../json/url_data.json'
+import urldata from '../json/urlData.json'
 
-const DomainRedirect = () => {  
+const DomainRedirect = ({ onComplete }) => {  
   const hasLogged = useRef(false);
 
   useEffect(() => {
@@ -37,10 +37,15 @@ const DomainRedirect = () => {
       console.info(`🔧 Running in testing environment on ${currentDomain}`);
     }
 
+    // Call onComplete callback with the result
+    if (onComplete) {
+      onComplete(isValidDomain);
+    }
+
     return () => {
       hasLogged.current = false;
     };
-  }, []);
+  }, [onComplete]);
 
   return null;
 };
