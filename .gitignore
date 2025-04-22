@@ -25,9 +25,6 @@ __snapshots__/
 # IDE & Editor Files
 .idea/
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
 !.vscode/extensions.json
 *.swp
 *.swo
@@ -46,6 +43,8 @@ debug.log
 .stylelintcache
 .cache
 .parcel-cache
+.local-sync/
+.config/
 
 # TypeScript
 *.tsbuildinfo
@@ -64,3 +63,10 @@ Thumbs.db
 # Project Specific
 /temp
 *.bak
+
+# Local OS-level configs
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.localconfig/
+**/._*

@@ -17,14 +17,66 @@ indent_size = 2
 trim_trailing_whitespace = false
 max_line_length = off
 
-# Python files
-[*.py]
-indent_size = 4
-
-# Tab indentation for Makefiles
-[Makefile]
-indent_style = tab
-
 # JSON files
 [*.{json,json5}]
 insert_final_newline = false
+
+// filepath: /home/pi/vscode/reactapp-testing/.gitignore
+# Dependencies
+/node_modules
+
+# Testing
+/coverage
+/sync-test
+temp.json
+__snapshots__/
+*.snap
+
+# Production
+/build
+/dist
+*.tsbuildinfo
+
+# Environment Files
+.env
+.env.*
+!.env.example
+
+# IDE & Editor Files
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+.DS_Store
+
+# Debug Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+*.log
+
+# Cache & Local Files
+.npm
+.eslintcache
+.stylelintcache
+.cache
+
+# Misc
+.DS_Store
+Thumbs.db
+*.pid
+*.pid.lock
+*.seed
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Project Specific
+/temp
+*.bak

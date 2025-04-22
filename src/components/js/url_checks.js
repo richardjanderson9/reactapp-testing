@@ -1,24 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import useConstant from 'use-constant';
+/* eslint-disable no-console */
+import { useEffect, useRef } from 'react';
+import urldata from '../json/url_data.json'
 
-const DomainRedirect = () => {
-  const [isRedirecting, setIsRedirecting] = useState(false);
-  const domains = useConstant(() => ({
-    CORRECT: 'react.richardjanderson.uk',
-    ALLOWED: ['localhost', '127.0.0.1', 'react.richardjanderson.uk']
-  }));
+const DomainRedirect = () => {  
+  const hasLogged = useRef(false);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'test' || domains.ALLOWED.includes(window.location.hostname)) return;
+    if (hasLogged.current) return;
+    hasLogged.current = true;
 
-    setIsRedirecting(true);
-    const url = new URL(window.location.href);
-    window.location.replace(`https://${domains.CORRECT}${url.pathname}${url.search}${url.hash}`);
-  }, [domains]);
+    const currentDomain = window.location.hostname;
+    let isValidDomain = false;
 
-  return isRedirecting && process.env.NODE_ENV !== 'test' ? (
-    <div role="alert" aria-busy="true">Redirecting to secure domain...</div>
-  ) : null;
+    // Check if domain matches any environment
+    Object.entries(urldata.environments).forEach(([env, data]) => {
+      data.domains.forEach(domain => {
+        // For live environment, check for subdomains
+        if (env === 'live') {
+          const domainRegex = new RegExp(`^(?:[\\w-]+\\.)*${domain.replace('.', '\\.')}$`);
+          if (domainRegex.test(currentDomain)) {
+            isValidDomain = true;
+          }
+        } else if (currentDomain === domain) {
+          isValidDomain = true;
+        }
+      });
+    });
+
+    // Display appropriate warning based on environment
+    if (!isValidDomain) {
+      console.warn(`⚠️ Warning: ${currentDomain} is not a recognized domain. Please use a valid testing or live domain.`);
+    } else {
+      console.info(`🔧 Running in testing environment on ${currentDomain}`);
+    }
+
+    return () => {
+      hasLogged.current = false;
+    };
+  }, []);
+
+  return null;
 };
 
 export default DomainRedirect;

@@ -1,0 +1,13 @@
+{
+  "environments": {
+    "live": {
+      "domains": ["richardjanderson.uk"]
+    },
+    "testing": {
+      "domains": ["localhost"]
+    },
+    "staging": {
+      "domains": []
+    }
+  }
+}
