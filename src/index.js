@@ -1,12 +1,16 @@
+// React Imports!
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+// Application Imports!
+import App from './App'; // Calls the main application.
+import './index.css'; // Stylesheet for the application.
+// Custom Imports!
 import DomainRedirect from './components/js/urlChecks';
 
-function DomainCheckWrapper() {
+// Function to check if the domain is valid and display the application.
+function DisplayApplication() {
   const [domainValid, setDomainValid] = useState(null);
-
+  // Check if the domain is valid.
   return (
     <>
       {domainValid === null && (
@@ -17,10 +21,13 @@ function DomainCheckWrapper() {
   );
 }
 
+// Create a root element for React to render into.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+// Render the application into the root element.
 root.render(
   <React.StrictMode>
-    <DomainCheckWrapper />
+    {/* Calls the main application. */}
+    <DisplayApplication />
   </React.StrictMode>
 );

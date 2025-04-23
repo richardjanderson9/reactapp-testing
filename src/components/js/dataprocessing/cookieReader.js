@@ -1,7 +1,8 @@
+// React Imports!
 import React from 'react';
 
 const CookieReader = () => {
-  // console.log('CookieReader component loaded!');
+  console.log('CookieReader!');
   return (
     <div>
       {/* Placeholder for CookieReader functionality */}

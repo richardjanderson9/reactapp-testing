@@ -1,18 +1,19 @@
-// src/App.js
+// React Imports!
 import React from 'react';
-import './App.css';
-import UserInterface from './components/js/userInterface';
-import FingerprintChecks from './components/js/dataprocessing/fingerprintChecks';
-import CookieReader from './components/js/dataprocessing/cookieReader';
-import BackgroundData from './components/js/dataprocessing/backgroundData';
+// Application Imports!
+import './App.css'; // CSS stylesheet for the application.
+// Custom Imports!
+import UserInterface from './components/js/userInterface'; // Calls the user interface component.
+import DataChecks from './components/js/dataChecks' // Calls the data checks component.
 
+// Main Application Function.
 function App() {
   return (
     <div className="App">
+      {/* Calls User Interface! */}
       <UserInterface />
-      <FingerprintChecks />
-      <CookieReader />
-      <BackgroundData />
+      {/* Calls Browser Checks!*/}
+      <DataChecks />
     </div>
   );
 }

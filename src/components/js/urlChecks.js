@@ -1,6 +1,7 @@
-/* eslint-disable no-console */
+// React Imports!
 import { useEffect, useRef } from 'react';
-import urldata from '../json/urlData.json'
+// Custom Imports!
+import urldata from '../json/urlData.json'; // Importing URL data from a JSON file.
 
 const DomainRedirect = ({ onComplete }) => {  
   const hasLogged = useRef(false);
@@ -13,7 +14,7 @@ const DomainRedirect = ({ onComplete }) => {
     let isValidDomain = false;
     let matchedEnv = null;
 
-    // Check if domain matches any environment
+    // Check if domain matches any environment.
     Object.entries(urldata.environments).forEach(([env, data]) => {
       data.domains.forEach(domain => {
         if (env === 'live') {
@@ -37,7 +38,7 @@ const DomainRedirect = ({ onComplete }) => {
       console.info(`🔧 Running in testing environment on ${currentDomain}`);
     }
 
-    // Call onComplete callback with the result
+    // Call onComplete callback with the result.
     if (onComplete) {
       onComplete(isValidDomain);
     }
