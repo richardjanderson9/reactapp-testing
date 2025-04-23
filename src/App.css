@@ -17,7 +17,6 @@
 /* App Container */
 .App {
   text-align: center;
-  min-height: 100vh;
   animation: bgChange var(--bg-transition-time) ease-in-out infinite;
 }
 
