@@ -1,26 +1,29 @@
 // React Imports!
 import { useEffect } from 'react';
 // Custom Imports!
-import CookieWriter from './cookieWriter';
+import { setCookie } from './cookieWriter';
 
 const FingerprintChecks = () => {
-  // Main code (has been altered) from https://www.npmjs.com/package/@fingerprintjs/fingerprintjs
-  useEffect(() => {
-    const fpPromise = import('https://openfpcdn.io/fingerprintjs/v4')
-      .then(FP => FP.load());
-    
-    fpPromise
-      .then(fp => fp.get())
-      .then(result => {
-        console.log("Fingerprint is: ", result.visitorId);
-      })
-      .catch(e => console.error("Failed to load fingerprint JS: ", e));
-  }, []);
+    useEffect(() => {
+        const loadFingerprint = async () => {
+            try {
+                const FP = await import('https://openfpcdn.io/fingerprintjs/v4');
+                const fp = await FP.load();
+                const result = await fp.get();
+                
+                // Use the centralized cookie writer
+                setCookie('fingerprint', result.visitorId, {
+                    secure: true,
+                    maxAge: 30 // 30 days
+                });
+            } catch (e) {
+                console.error("Fingerprint error:", e);
+            }
+        };
+        loadFingerprint();
+    }, []);
 
-  // Testing call to CookieWriter
-  CookieWriter();
-
-  return null;
+    return null; // No UI component to render.
 };
 
 export default FingerprintChecks;

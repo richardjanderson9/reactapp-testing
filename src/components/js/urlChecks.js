@@ -48,7 +48,7 @@ const DomainRedirect = ({ onComplete }) => {
     };
   }, [onComplete]);
 
-  return null;
+  return null; // No UI component to render.
 };
 
 export default DomainRedirect;

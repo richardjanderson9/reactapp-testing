@@ -1,0 +1,24 @@
+{
+    "cookies": [
+        {
+            "Name": "sessiontoken",
+            "time": 30,
+            "securitybased": true
+        },
+        {
+            "Name": "loadtime",
+            "time": 30,
+            "securitybased": false
+        },
+        {
+            "Name": "fingerprint",
+            "time": 30,
+            "securitybased": true
+        },
+        {
+            "Name": "cloudflare",
+            "time": 30,
+            "securitybased": true
+        }
+    ]
+}

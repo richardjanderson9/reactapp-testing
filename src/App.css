@@ -90,18 +90,10 @@
 
 /* Background Animation */
 @keyframes backgroundChange {
-  0%, 100% {
-    background-color: var(--bg-color-1);
-  }
-  25% {
-    background-color: var(--bg-color-2);
-  }
-  50% {
-    background-color: var(--bg-color-3);
-  }
-  75% {
-    background-color: var(--bg-color-4);
-  }
+  0%, 100% { background-color: var(--bg-color-1); }
+  25% { background-color: var(--bg-color-2); }
+  50% { background-color: var(--bg-color-3); }
+  75% { background-color: var(--bg-color-4); }
 }
 
 @keyframes spin {
@@ -143,4 +135,37 @@
 @keyframes githubHueRotate {
   0% { filter: hue-rotate(0deg); }
   100% { filter: hue-rotate(360deg); }
+}
+
+/* Add these styles to your existing CSS */
+.fingerprint-display {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #282c34;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.fingerprint-label {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.fingerprint-value {
+    font-family: monospace;
+    background-color: #363b44;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.github-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.fingerprint-text {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  padding-top: 15px;
 }
