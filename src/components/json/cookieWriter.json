@@ -3,22 +3,32 @@
         {
             "Name": "sessiontoken",
             "time": 30,
-            "securitybased": true
+            "securitybased": true,
+            "source": "external"
         },
         {
             "Name": "loadtime",
             "time": 30,
-            "securitybased": false
+            "securitybased": false,
+            "source": "local"
         },
         {
             "Name": "fingerprint",
             "time": 30,
-            "securitybased": true
+            "securitybased": true,
+            "source": "local"
         },
         {
             "Name": "cloudflare",
             "time": 30,
-            "securitybased": true
+            "securitybased": true,
+            "source": "external"
+        },
+        {
+            "Name": "env",
+            "time": 30,
+            "securitybased": false,
+            "source": "local"
         }
     ]
 }

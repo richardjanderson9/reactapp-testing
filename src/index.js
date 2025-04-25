@@ -9,14 +9,14 @@ import DomainRedirect from './components/js/urlChecks';
 
 // Function to check if the domain is valid and display the application.
 function DisplayApplication() {
-  const [domainValid, setDomainValid] = useState(null);
+  const [domainValid, setDomainValid] = useState(false);
   // Check if the domain is valid.
   return (
     <>
-      {domainValid === null && (
+      {!domainValid && (
         <DomainRedirect onComplete={(isValid) => setDomainValid(isValid)} />
       )}
-      {domainValid !== null && <App />}
+      {domainValid && <App />}
     </>
   );
 }

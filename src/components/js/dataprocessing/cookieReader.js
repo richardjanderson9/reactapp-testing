@@ -1,5 +1,9 @@
 // React Imports!
 import React from 'react';
+// Custom Imports! (for testing purposes, sets cloudflare cookies to enable testing.)
+import CloudflareCookies from './cloudflareCookies'; // CloudflareCookies.js
+// Import the cookie writer functionality
+import { setExternalCookies } from './cookieWriter';
 
 // Centralized cookie reading function
 export const getCookie = (cookieName) => {
@@ -10,7 +14,14 @@ export const getCookie = (cookieName) => {
 
 const CookieReader = () => {
     React.useEffect(() => {
-        // Any initial cookie reading logic can go here
+        // Set external cookies first
+        try {
+            setExternalCookies();
+        } catch (error) {
+            // Handle error silently
+        }        
+        // Then execute CloudflareCookies functionality
+        CloudflareCookies.getEnvironmentCookie();
     }, []);
 
     return null; // No UI component to render.

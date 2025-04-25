@@ -1,21 +1,22 @@
 {
-  "environments": {
-    "live": {
-      "domains": [
-        "richardjanderson.uk",
-        "rja-projects.site"
-      ]
+  "environments": [
+    {
+      "name": "testing",
+      "domains": ["localhost", "127.0.0.1"],
+      "matchType": "exact",
+      "isValid": true
     },
-    "testing": {
-      "domains": [
-        "localhost",
-        "127.0.0.1"
-      ]
+    {
+      "name": "live",
+      "domains": ["richardjanderson.uk", "rja-projects.site"],
+      "matchType": "exactOrSubdomain",
+      "isValid": true
     },
-    "staging": {
-      "domains": [
-        "azurewebsites.net"
-      ]
+    {
+      "name": "staging",
+      "domains": ["azurewebsites.net"],
+      "matchType": "includes",
+      "isValid": false
     }
-  }
+  ]
 }
