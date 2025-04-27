@@ -1,0 +1,12 @@
+{
+  "correctUrl": [
+    {
+      "domain": "react.richardjanderson.uk",
+      "status": "preferred"
+    },
+    {
+      "domain": "rja-projects.site",
+      "status": "backup"
+    }
+  ]
+}

@@ -1,12 +1,6 @@
 {
   "environments": [
     {
-      "name": "testing",
-      "domains": ["localhost", "127.0.0.1"],
-      "matchType": "exact",
-      "isValid": true
-    },
-    {
       "name": "live",
       "domains": ["richardjanderson.uk", "rja-projects.site"],
       "matchType": "exactOrSubdomain",
@@ -17,6 +11,12 @@
       "domains": ["azurewebsites.net"],
       "matchType": "includes",
       "isValid": false
+    },
+    {
+      "name": "testing",
+      "domains": ["raspicode.home", "localhost", "127.0.0.1"],
+      "matchType": "exact",
+      "isValid": true
     }
   ]
 }

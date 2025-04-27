@@ -12,6 +12,7 @@ temp.json
 __snapshots__/
 *.snap
 .npmcheckrc
+*.OLD
 
 # Production
 /build
