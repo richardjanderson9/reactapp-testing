@@ -1,3 +1,11 @@
+/*
+  Path -- /src/components/js/dataprocessing/cloudflareCookies.js
+  Description -- This module handles the setting and reading of cookies.
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 // React Imports!
 import React from 'react';
 // Custom Imports! (for testing purposes, sets cloudflare cookies to enable testing.)
@@ -27,4 +35,4 @@ const CookieReader = () => {
     return null; // No UI component to render.
 };
 
-export default CookieReader;
+export default CookieReader; // Exporting the CookieReader component for use in other files.

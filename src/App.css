@@ -1,3 +1,11 @@
+/*
+  Path -- /src/App.css
+  Description -- Styles for the React application.
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 /* CSS Variables */
 :root {
   --hue-rotation: 360deg;
@@ -168,4 +176,8 @@
   font-size: 1.2rem;
   margin-top: 10px;
   padding-top: 15px;
+}
+
+.hide {
+  display: none;
 }

@@ -1,3 +1,11 @@
+/*
+  Path -- /src/components/js/dataprocessing/cookieWriter.js
+  Description -- This module handles the setting and writting of cookies
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 // React Imports!
 import React from 'react';
 // Custom Imports!
@@ -68,4 +76,4 @@ const CookieWriter = () => {
     return null; // No UI component to render.
 };
 
-export default CookieWriter;
+export default CookieWriter; // Exporting the CookieWriter component for use in other files.

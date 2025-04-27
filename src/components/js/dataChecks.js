@@ -1,3 +1,11 @@
+/*
+  Path -- /src/components/js/dataChecks.js
+  Description -- This file contains the DataChecks component, which is responsible for handling data checks in the application.
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 // React Imports!
 import React from 'react';
 // Custom Imports!
@@ -18,4 +26,4 @@ function DataChecks() {
   );
 }
 
-export default DataChecks;
+export default DataChecks; // Exporting the DataChecks component for use in other files.

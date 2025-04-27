@@ -1,3 +1,11 @@
+/*
+  Path -- /src/components/js/userInterface.js
+  Description -- This file contains the UserInterface component, which is responsible for displaying the application name, version, and fingerprint.
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 // React Imports!
 import React, { useState, useEffect } from 'react';
 // Application Imports!
@@ -34,7 +42,7 @@ const UserInterface = () => {
         <button className="github-button" onClick={handleRepoClick}>
           View Source on GitHub
         </button>
-        <small className="fingerprint-text">
+        <small className="fingerprint-text hide">
           Fingerprint: {fingerprint}
         </small>
       </header>
@@ -42,6 +50,6 @@ const UserInterface = () => {
   );
 };
 
-UserInterface.displayName = 'UserInterface';
+UserInterface.displayName = 'UserInterface'; // Setting the display name for better debugging in React DevTools.
 
-export default UserInterface;
+export default UserInterface; // Exporting the UserInterface component for use in other files.

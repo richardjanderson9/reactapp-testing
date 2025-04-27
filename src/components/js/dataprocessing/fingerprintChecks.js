@@ -1,3 +1,11 @@
+/*
+  Path -- /src/components/js/dataprocessing/fingerprintChecks.js
+  Description -- This module handles the loading of FingerprintJS and setting the fingerprint cookie.
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 // React Imports!
 import { useEffect } from 'react';
 // Custom Imports!
@@ -26,4 +34,4 @@ const FingerprintChecks = () => {
     return null; // No UI component to render.
 };
 
-export default FingerprintChecks;
+export default FingerprintChecks; // Exporting the FingerprintChecks component for use in other files.

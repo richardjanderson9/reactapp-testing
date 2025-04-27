@@ -1,3 +1,11 @@
+/*
+  Path -- /src/components/js/urlChecks.js
+  Description -- This file contains the DomainRedirect component, which is responsible for redirecting users to the correct domain based on their current location.
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 // React Imports!
 import { useEffect, useRef } from 'react'; // React imports for managing side effects and refs.
 // Custom Imports!

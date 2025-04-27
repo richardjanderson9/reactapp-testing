@@ -1,3 +1,11 @@
+/*
+  Path -- /src/Index.js
+  Description -- This file is the entry point for the React application. It renders the main application component into the root element of the HTML document.
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 // React Imports!
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';

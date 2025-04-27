@@ -1,3 +1,11 @@
+/*
+  Path -- /src/App.js
+  Description -- This file contains the main application component for a React application.
+  Author -- [Richard Anderson]
+  Last Updated -- [27-April-2025]
+  Version -- 1.0.0
+*/
+
 // React Imports!
 import React from 'react';
 // Application Imports!
@@ -18,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; // Exporting the App component for use in other files.
