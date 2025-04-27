@@ -1,47 +1,53 @@
 # React Testing Application
 
-A lightweight React application demonstrating component testing and responsive design practices.
-
-## Quick Start
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-
-# Run tests
-npm test
-```
+A modern React application demonstrating domain validation, fingerprinting, and responsive design practices.
 
 ## Features
 
+- Domain validation and redirection
+- Browser fingerprinting via FingerprintJS
+- Cookie management system
+- Environment detection
 - Progressive Web App support
 - Performance monitoring
-- Domain redirection
-- Responsive design
+- Responsive design with dark mode support
 - Background animations
 
 ## Tech Stack
 
 - React 19.1.0
-- TypeScript
-- Jest
-- React Testing Library
+- React DOM 19.1.0
+- FingerprintJS for browser identification
+- Jest and React Testing Library for testing
 
-## Environment
+## Domain Configuration
 
-Create `.env` file:
-```plaintext
-REACT_APP_ANALYTICS_URL=your_analytics_url
-```
+The application supports multiple environments:
+- Production domains: richardjanderson.uk, rja-projects.site
+- Staging domains: azurewebsites.net (automatically redirects)
+
+## Project Structure
+
+- `/src` - Application source code
+  - `/components` - React components
+    - `/js` - JavaScript components
+      - `/dataprocessing` - Data handling utilities
+    - `/json` - Configuration files
+  - `/App.js` - Main application component
+  - `/index.js` - Application entry point
+
+## Continuous Integration
+
+This project uses GitHub Actions for CI/CD with automatic deployment to Azure Static Web Apps.
 
 ## Development
 
 ### Editor Configuration
 This project uses EditorConfig to maintain consistent coding styles. Please make sure your editor has EditorConfig support or install the appropriate plugin.
 
-## Licence
+### Security
+See [SECURITY.md](SECURITY.md) for security practices and vulnerability reporting.
+
+## License
 
 MIT

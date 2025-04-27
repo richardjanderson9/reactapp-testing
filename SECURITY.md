@@ -4,6 +4,7 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 1.3.x   | :white_check_mark: |
 | 1.0.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
@@ -18,11 +19,20 @@
 
 ## Security Measures
 
-- HTTPS enforced
+- Domain validation and redirection
+- HTTPS enforced with SameSite cookie policy
+- Browser fingerprinting for identification
 - Content Security Policy implemented
 - Regular dependency updates
 - Cloudflare protection
 - Automated security scanning
+- Environment-specific cookie handling
+
+## Cookie Management
+
+- Cookies marked with appropriate security flags
+- Environment detection through cookie validation
+- Separate handling for external vs. local cookies
 
 ## Development Practices
 
@@ -30,21 +40,10 @@
 - Environment variables for sensitive data
 - Input sanitization enforced
 - Security headers implemented
-
-## Commands
-
-```bash
-# Audit dependencies
-npm audit
-
-# Update dependencies
-npm update
-
-# Run security tests
-npm run test:security
-```
+- Linting to catch potential issues (`npm run lint`)
 
 ## Additional Resources
 
 - [Security Headers](https://securityheaders.com/?q=react.richardjanderson.uk)
 - [Cloudflare Security](https://www.cloudflare.com/security/)
+- [FingerprintJS Documentation](https://fingerprintjs.com/docs/)
